@@ -60,7 +60,6 @@ class MyHomePage extends StatelessWidget {
       child: Group(
         indiduals: group,
         title: 'World Cup',
-        color: Colors.grey,
         maxElmnt: 4,
       ),
     );

@@ -36,9 +36,13 @@ class Group extends StatefulWidget {
 
 class _GroupState extends State<Group> {
   late bool showClicked;
+  late int maxToShow;
   void showAll() {
     setState(() {
-      showClicked = !showClicked;
+      if (widget.maxElmnt != null) {
+        maxToShow = showClicked ? widget.maxElmnt! : widget.indiduals.length;
+        showClicked = !showClicked;
+      }
     });
   }
 
@@ -47,6 +51,7 @@ class _GroupState extends State<Group> {
     // TODO: implement initState
     super.initState();
     showClicked = false;
+    maxToShow = widget.maxElmnt ?? widget.indiduals.length;
   }
 
   @override
@@ -55,7 +60,7 @@ class _GroupState extends State<Group> {
       padding: EdgeInsets.symmetric(
           horizontal: widget.xPadding ?? 4, vertical: widget.yPadding ?? 8),
       decoration: BoxDecoration(
-        color: widget.color ?? Colors.transparent,
+        color: widget.color ?? Colors.grey,
         borderRadius: BorderRadius.circular(widget.borderRadius),
       ),
       child: Column(
@@ -82,16 +87,19 @@ class _GroupState extends State<Group> {
             spacing: widget.xSpacing ?? 4,
             runSpacing: widget.ySpacing ?? 4,
             children: widget.indiduals
-                .getRange(0, widget.maxElmnt ?? widget.indiduals.length)
-                .map((e) =>
-                    IndividualCard.fromModel(indiviual: e, onPressed: () {}))
+                .getRange(0, maxToShow)
+                .map((e) => IndividualCard.fromModel(
+                    indiviual: e,
+                    onPressed: () {
+                      print("dd");
+                    }))
                 .toList(),
           ),
           widget.maxElmnt != null
               ? Align(
                   alignment: Alignment.bottomRight,
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: showAll,
                     child: Text(
                       !showClicked ? 'show more' : 'show less',
                       style: widget.buttonStyle ??

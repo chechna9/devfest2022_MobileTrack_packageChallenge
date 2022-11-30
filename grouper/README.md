@@ -1,4 +1,4 @@
-Link to package <a href='https://pub.dev/packages/grouper'></a>
+<a href='https://pub.dev/packages/grouper'>Link</a> to package 
 <br/>
 a package that regroup elements in card made during devfest 2022 challenges
 <br/>

@@ -1,7 +1,5 @@
-import 'package:example/individual_modal.dart';
-import 'package:example/individuel_card.dart';
-import 'package:example/group.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pkg/flutter_pkg.dart';
 
 void main() {
   runApp(const MyApp());

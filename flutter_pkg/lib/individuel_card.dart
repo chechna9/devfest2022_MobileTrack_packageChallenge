@@ -1,5 +1,5 @@
-import 'package:example/individual_modal.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pkg/individual_modal.dart';
 
 class IndividualCard extends StatelessWidget {
   final String imgUrl;

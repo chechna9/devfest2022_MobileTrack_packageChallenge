@@ -1,6 +1,6 @@
-import 'package:example/individual_modal.dart';
-import 'package:example/individuel_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pkg/individual_modal.dart';
+import 'package:flutter_pkg/individuel_card.dart';
 
 class Group extends StatefulWidget {
   final String? title;
@@ -50,7 +50,6 @@ class _GroupState extends State<Group> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     showClicked = false;
     maxToShow = widget.maxElmnt ?? widget.indiduals.length;
@@ -91,11 +90,8 @@ class _GroupState extends State<Group> {
             runSpacing: widget.ySpacing ?? 4,
             children: widget.indiduals
                 .getRange(0, maxToShow)
-                .map((e) => IndividualCard.fromModel(
-                    indiviual: e,
-                    onPressed: () {
-                      print("dd");
-                    }))
+                .map((e) =>
+                    IndividualCard.fromModel(indiviual: e, onPressed: () {}))
                 .toList(),
           ),
           widget.maxElmnt != null

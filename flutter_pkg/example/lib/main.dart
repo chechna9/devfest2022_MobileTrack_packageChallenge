@@ -57,10 +57,23 @@ class MyHomePage extends StatelessWidget {
           isNet: true),
     ];
     return Center(
-      child: Group(
-        indiduals: group,
-        title: 'World Cup',
-        maxElmnt: 4,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Group(
+          indiduals: group,
+          title: 'World Cup',
+          color: Color.fromARGB(255, 150, 139, 104),
+          maxElmnt: 5,
+          buttonStyle: const TextStyle(color: Colors.white),
+          titleStyle: const TextStyle(
+              color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+          xPadding: 4,
+          yPadding: 20,
+          ySpacing: 10,
+          xSpacing: 10,
+          borderRadius: 20,
+          alignment: WrapAlignment.start,
+        ),
       ),
     );
   }

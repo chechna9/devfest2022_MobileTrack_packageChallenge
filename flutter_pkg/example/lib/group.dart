@@ -14,6 +14,7 @@ class Group extends StatefulWidget {
   final double? xSpacing;
   final double? ySpacing;
   final TextStyle? buttonStyle;
+  final WrapAlignment? alignment;
 
   Group({
     super.key,
@@ -28,6 +29,7 @@ class Group extends StatefulWidget {
     this.xSpacing,
     this.ySpacing,
     this.buttonStyle,
+    this.alignment,
   });
 
   @override
@@ -84,6 +86,7 @@ class _GroupState extends State<Group> {
                 )
               : Container(),
           Wrap(
+            alignment: widget.alignment ?? WrapAlignment.center,
             spacing: widget.xSpacing ?? 4,
             runSpacing: widget.ySpacing ?? 4,
             children: widget.indiduals

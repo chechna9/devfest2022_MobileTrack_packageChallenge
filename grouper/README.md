@@ -1,3 +1,5 @@
+Link to package <a href='https://pub.dev/packages/grouper'></a>
+<br/>
 a package that regroup elements in card made during devfest 2022 challenges
 <br/>
 you can customize
